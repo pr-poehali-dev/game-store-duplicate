@@ -62,7 +62,10 @@ export default function Index() {
   };
 
   const addToCart = (gameId: number) => {
-    window.open('https://t.me/straxdoksmaks', '_blank');
+    const game = GAMES.find(g => g.id === gameId);
+    const message = game ? `Хочу купить ${game.title}` : 'Хочу купить этот товар';
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://t.me/straxdoksmaks?text=${encodedMessage}`, '_blank');
   };
 
   return (
