@@ -15,7 +15,7 @@ const GAMES = [
     discount: 0,
     genre: "Услуга",
     rating: 5.0,
-    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&h=225&fit=crop",
+    image: "https://cdn.poehali.dev/files/45d367498d31cdfc70a8ee21dcef23c2.jpg",
     featured: true
   },
   {
@@ -25,7 +25,7 @@ const GAMES = [
     discount: 0,
     genre: "Услуга",
     rating: 5.0,
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=225&fit=crop",
+    image: "https://cdn.poehali.dev/files/45d367498d31cdfc70a8ee21dcef23c2.jpg",
     featured: true
   },
   {
@@ -35,7 +35,7 @@ const GAMES = [
     discount: 0,
     genre: "Услуга",
     rating: 5.0,
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=225&fit=crop",
+    image: "https://cdn.poehali.dev/files/45d367498d31cdfc70a8ee21dcef23c2.jpg",
     featured: true
   }
 ];
