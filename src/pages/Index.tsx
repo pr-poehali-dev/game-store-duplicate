@@ -7,75 +7,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Icon from "@/components/ui/icon";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-const GAMES = [
-  {
-    id: 1,
-    title: "Cyberpunk Legends",
-    price: 2499,
-    discount: 30,
-    genre: "RPG",
-    rating: 4.8,
-    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=225&fit=crop",
-    featured: true
-  },
-  {
-    id: 2,
-    title: "Neon Racing",
-    price: 1299,
-    discount: 15,
-    genre: "Racing",
-    rating: 4.5,
-    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=225&fit=crop",
-    featured: true
-  },
-  {
-    id: 3,
-    title: "Shadow Warriors",
-    price: 1899,
-    discount: 0,
-    genre: "Action",
-    rating: 4.9,
-    image: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=225&fit=crop",
-    featured: false
-  },
-  {
-    id: 4,
-    title: "Space Odyssey",
-    price: 2199,
-    discount: 25,
-    genre: "Adventure",
-    rating: 4.7,
-    image: "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=400&h=225&fit=crop",
-    featured: false
-  },
-  {
-    id: 5,
-    title: "Pixel Kingdom",
-    price: 899,
-    discount: 40,
-    genre: "Indie",
-    rating: 4.6,
-    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=225&fit=crop",
-    featured: false
-  },
-  {
-    id: 6,
-    title: "Battle Royale X",
-    price: 0,
-    discount: 0,
-    genre: "Shooter",
-    rating: 4.4,
-    image: "https://images.unsplash.com/photo-1556438064-2d7646166914?w=400&h=225&fit=crop",
-    featured: false
-  }
-];
+const GAMES: any[] = [];
 
-const USER_LIBRARY = [
-  { id: 1, title: "Cyberpunk Legends", playtime: 45, lastPlayed: "2 дня назад" },
-  { id: 3, title: "Shadow Warriors", playtime: 120, lastPlayed: "Вчера" }
-];
+const USER_LIBRARY: any[] = [];
 
-const WISHLIST = [2, 4];
+const WISHLIST: number[] = [];
 
 export default function Index() {
   const [activeTab, setActiveTab] = useState("home");
