@@ -7,7 +7,38 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Icon from "@/components/ui/icon";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-const GAMES: any[] = [];
+const GAMES = [
+  {
+    id: 1,
+    title: "Разбан аккаунта",
+    price: 100,
+    discount: 0,
+    genre: "Услуга",
+    rating: 5.0,
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&h=225&fit=crop",
+    featured: true
+  },
+  {
+    id: 2,
+    title: "Размут аккаунта",
+    price: 50,
+    discount: 0,
+    genre: "Услуга",
+    rating: 5.0,
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=225&fit=crop",
+    featured: true
+  },
+  {
+    id: 3,
+    title: "Покупка админки",
+    price: 100,
+    discount: 0,
+    genre: "Услуга",
+    rating: 5.0,
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=225&fit=crop",
+    featured: true
+  }
+];
 
 const USER_LIBRARY: any[] = [];
 
@@ -31,9 +62,7 @@ export default function Index() {
   };
 
   const addToCart = (gameId: number) => {
-    if (!cart.includes(gameId)) {
-      setCart([...cart, gameId]);
-    }
+    window.open('https://t.me/straxdoksmaks', '_blank');
   };
 
   return (
@@ -41,7 +70,7 @@ export default function Index() {
       <header className="sticky top-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-lg">
         <div className="container flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-8">
-            <h1 className="text-2xl font-bold text-gradient">GAMESTORE</h1>
+            <h1 className="text-2xl font-bold text-gradient">GREEN RUSSIA SHOP</h1>
             <nav className="hidden md:flex gap-6">
               <Button
                 variant={activeTab === "home" ? "default" : "ghost"}
@@ -100,25 +129,18 @@ export default function Index() {
               <div className="relative z-10">
                 <Badge className="mb-4 animate-glow-pulse">🔥 Горячее предложение</Badge>
                 <h2 className="text-4xl md:text-6xl font-bold mb-4 text-gradient">
-                  Киберпанк сезон начался!
+                  Green Russia Shop
                 </h2>
-                <p className="text-xl text-muted-foreground mb-6 max-w-2xl">
-                  Погрузись в неоновое будущее со скидками до 50%
-                </p>
-                <Button size="lg" className="hover-scale glow-hover">
+                <Button size="lg" className="hover-scale glow-hover" onClick={() => setActiveTab("catalog")}>
                   <Icon name="Zap" className="mr-2 h-5 w-5" />
-                  Смотреть игры
+                  Смотреть услуги
                 </Button>
               </div>
             </section>
 
             <section>
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-bold">Топ игр недели</h3>
-                <Button variant="ghost" className="hover-scale">
-                  Показать всё
-                  <Icon name="ArrowRight" className="ml-2 h-4 w-4" />
-                </Button>
+                <h3 className="text-2xl font-bold">Наши услуги</h3>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {GAMES.filter(g => g.featured).map((game, idx) => (
@@ -190,23 +212,7 @@ export default function Index() {
               </div>
             </section>
 
-            <section>
-              <h3 className="text-2xl font-bold mb-6">Популярные жанры</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {["RPG", "Action", "Racing", "Indie"].map((genre, idx) => (
-                  <Card
-                    key={genre}
-                    className="p-6 text-center cursor-pointer hover-scale glow-hover animate-scale-in"
-                    style={{ animationDelay: `${idx * 100}ms` }}
-                  >
-                    <div className="text-4xl mb-2">
-                      {genre === "RPG" ? "⚔️" : genre === "Action" ? "💥" : genre === "Racing" ? "🏎️" : "🎮"}
-                    </div>
-                    <h4 className="font-bold">{genre}</h4>
-                  </Card>
-                ))}
-              </div>
-            </section>
+
           </div>
         )}
 
@@ -216,7 +222,7 @@ export default function Index() {
               <div className="relative flex-1 w-full">
                 <Icon name="Search" className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
-                  placeholder="Поиск игр по названию или жанру..."
+                  placeholder="Поиск услуг..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-10"
@@ -421,17 +427,17 @@ export default function Index() {
         <div className="container px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
-              <h3 className="font-bold text-xl mb-4 text-gradient">GAMESTORE</h3>
+              <h3 className="font-bold text-xl mb-4 text-gradient">GREEN RUSSIA SHOP</h3>
               <p className="text-sm text-muted-foreground">
-                Лучшие игры по лучшим ценам
+                Качественные услуги для вашего проекта
               </p>
             </div>
             <div>
-              <h4 className="font-bold mb-3">Магазин</h4>
+              <h4 className="font-bold mb-3">Услуги</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="hover:text-primary cursor-pointer transition-colors">Каталог игр</li>
-                <li className="hover:text-primary cursor-pointer transition-colors">Новинки</li>
-                <li className="hover:text-primary cursor-pointer transition-colors">Скидки</li>
+                <li className="hover:text-primary cursor-pointer transition-colors">Разбан аккаунта</li>
+                <li className="hover:text-primary cursor-pointer transition-colors">Размут аккаунта</li>
+                <li className="hover:text-primary cursor-pointer transition-colors">Покупка админки</li>
               </ul>
             </div>
             <div>
@@ -458,7 +464,7 @@ export default function Index() {
             </div>
           </div>
           <div className="text-center text-sm text-muted-foreground pt-8 border-t border-border/40">
-            © 2024 GameStore. Все права защищены.
+            © 2024 Green Russia Shop. Все права защищены.
           </div>
         </div>
       </footer>
